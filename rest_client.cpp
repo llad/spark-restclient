@@ -1,4 +1,16 @@
-#include "RestClient.h"
+/**
+ ******************************************************************************
+ * @file    rest_client.cpp
+ * 
+ * details: https://github.com/llad/spark-restclient
+ * 
+ * credit: https://github.com/csquared/arduino-restclient
+ * 
+ ******************************************************************************
+
+*/
+
+#include "rest_client.h"
 
 #ifdef HTTP_DEBUG
 #define HTTP_DEBUG_PRINT(string) (Serial.print(string))
@@ -20,21 +32,6 @@ RestClient::RestClient(const char* _host, int _port){
   port = _port;
   num_headers = 0;
   contentTypeSet = false;
-}
-
-void RestClient::dhcp(){
-  byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
-  if (begin(mac) == 0) {
-    Serial.println("Failed to configure Ethernet using DHCP");
-  }
-  //give it time to initialize
-  delay(1000);
-}
-
-int RestClient::begin(byte mac[]){
-  return Ethernet.begin(mac);
-  //give it time to initialize
-  delay(1000);
 }
 
 // GET path
