@@ -1,6 +1,17 @@
-#include <Arduino.h>
-#include <SPI.h>
-#include <Ethernet.h>
+/**
+ ******************************************************************************
+ * @file    rest_client.h
+ * 
+ * details: https://github.com/llad/spark-restclient
+ * 
+ * credit: https://github.com/csquared/arduino-restclient
+ * 
+ ******************************************************************************
+
+*/
+
+
+#include "application.h"
 
 class RestClient {
 
@@ -42,7 +53,7 @@ class RestClient {
     int del(const char*, const char*, String*);
 
   private:
-    EthernetClient client;
+    TCPClient client;
     int readResponse(String*);
     void write(const char*);
     const char* host;
