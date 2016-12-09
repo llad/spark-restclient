@@ -1,11 +1,11 @@
 /**
  ******************************************************************************
  * @file    rest_client.cpp
- * 
+ *
  * details: https://github.com/llad/spark-restclient
- * 
+ *
  * credit: https://github.com/csquared/arduino-restclient
- * 
+ *
  ******************************************************************************
 
 */
@@ -32,6 +32,11 @@ RestClient::RestClient(const char* _host, int _port){
   port = _port;
   num_headers = 0;
   contentTypeSet = false;
+}
+
+// Enable/Disable Content-Type overwrite
+void RestClient::setContentTypeOverwrite(bool val) {
+  contentTypeSet = !val;
 }
 
 // GET path
