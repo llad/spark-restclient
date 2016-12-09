@@ -1,11 +1,11 @@
 /**
  ******************************************************************************
  * @file    rest_client.h
- * 
+ *
  * details: https://github.com/llad/spark-restclient
- * 
+ *
  * credit: https://github.com/csquared/arduino-restclient
- * 
+ *
  ******************************************************************************
 
 */
@@ -28,6 +28,8 @@ class RestClient {
                 const char* body, String* response);
     // Set a Request Header
     void setHeader(const char*);
+    // Enable/Disable Content-Type overwrite
+    void setContentTypeOverwrite(bool);
     // GET path
     int get(const char*);
     // GET path and response
