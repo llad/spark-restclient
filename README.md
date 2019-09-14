@@ -33,7 +33,7 @@ All methods return an HTTP status code or 0 if there was an error.
 Start making requests!
 
 ```c++
-int statusCode = client.get("/"));
+int statusCode = client.get("/");
 ```
 
 Pass in a string *by reference* for the response:
